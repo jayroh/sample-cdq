@@ -1,0 +1,279 @@
+Process:         sample-cdq [72063]
+Path:            /Users/USER/Library/Developer/CoreSimulator/Devices/A1AC494C-7650-4668-9B3D-BB67D2F1AECA/data/Applications/7D8CC83D-03DB-4899-B162-E906D72EE9A0/sample-cdq.app/sample-cdq
+Identifier:      sample-cdq
+Version:         0
+Code Type:       X86 (Native)
+Parent Process:  launchd_sim [71680]
+Responsible:     launchd_sim [71680]
+User ID:         501
+
+Date/Time:       2014-09-23 10:48:25.198 -0400
+OS Version:      Mac OS X 10.9.5 (13F34)
+Report Version:  11
+Anonymous UUID:  BAC357AC-03F3-3E44-8B81-0D5A36A0041A
+
+Sleep/Wake UUID: 81A93ECC-1D26-45CB-BEC3-ADD995555789
+
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+
+Exception Type:  EXC_BAD_ACCESS (SIGBUS)
+Exception Codes: KERN_PROTECTION_FAILURE at 0x0000000000000001
+
+VM Regions Near 0x1:
+--> __PAGEZERO             0000000000000000-0000000000001000 [    4K] ---/--- SM=NUL  /Users/USER/Library/Developer/CoreSimulator/Devices/A1AC494C-7650-4668-9B3D-BB67D2F1AECA/data/Applications/7D8CC83D-03DB-4899-B162-E906D72EE9A0/sample-cdq.app/sample-cdq
+    __TEXT                 0000000000001000-0000000000289000 [ 2592K] r-x/rwx SM=COW  /Users/USER/Library/Developer/CoreSimulator/Devices/A1AC494C-7650-4668-9B3D-BB67D2F1AECA/data/Applications/7D8CC83D-03DB-4899-B162-E906D72EE9A0/sample-cdq.app/sample-cdq
+
+Application Specific Information:
+objc_msgSend() selector name: isNSNumber__
+CoreSimulator 110.2 - Device: iPhone 4s - Runtime: iOS 7.0 (11B507) - DeviceType: iPhone 4s
+ 
+
+Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
+0   libobjc.A.dylib               	0x003450b0 objc_msgSend + 12
+1   CoreData                      	0x01c74011 _PFManagedObject_coerceValueForKeyWithDescription + 2833
+2   CoreData                      	0x01c41c49 _sharedIMPL_setvfk_core + 185
+3   CoreData                      	0x01c5b517 _svfk_0 + 39
+4   sample-cdq                    	0x000e668a __unnamed_20 + 106
+5   sample-cdq                    	0x0020a316 rb_vm_dispatch + 5958
+6   ???                           	0x0f333412 0 + 255013906
+7   ???                           	0x0f333819 0 + 255014937
+8   librubymotion-repl.dylib      	0x0e614093 rb_repl_eval + 1459
+9   sample-cdq                    	0x0024c85b __29-[RMREPL evaluateExpression:]_block_invoke24 + 43
+10  libdispatch.dylib             	0x031f9440 _dispatch_barrier_sync_f_slow_invoke + 71
+11  libdispatch.dylib             	0x0320a4b0 _dispatch_client_callout + 14
+12  libdispatch.dylib             	0x031f875e _dispatch_main_queue_callback_4CF + 340
+13  CoreFoundation                	0x022b4a5e __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 14
+14  CoreFoundation                	0x021f56bb __CFRunLoopRun + 1963
+15  CoreFoundation                	0x021f4ac3 CFRunLoopRunSpecific + 467
+16  CoreFoundation                	0x021f48db CFRunLoopRunInMode + 123
+17  GraphicsServices              	0x03ed39e2 GSEventRunModal + 192
+18  GraphicsServices              	0x03ed3809 GSEventRun + 104
+19  UIKit                         	0x0075cd3b UIApplicationMain + 1225
+20  sample-cdq                    	0x0001a6fc main + 156 (main.mm:15)
+21  libdyld.dylib                 	0x0349c701 start + 1
+
+Thread 1:: Dispatch queue: com.apple.libdispatch-manager
+0   libsystem_kernel.dylib        	0x035d3992 kevent64 + 10
+1   libdispatch.dylib             	0x031fbf3e _dispatch_mgr_invoke + 238
+2   libdispatch.dylib             	0x031fbc7a _dispatch_mgr_thread + 60
+
+Thread 2:
+0   libsystem_kernel.dylib        	0x035cdfb6 semaphore_wait_trap + 10
+1   libdispatch.dylib             	0x031f9cde _dispatch_thread_semaphore_wait + 16
+2   libdispatch.dylib             	0x031f7516 _dispatch_barrier_sync_f_slow + 242
+3   libdispatch.dylib             	0x031f7413 dispatch_barrier_sync_f + 74
+4   libdispatch.dylib             	0x031f7995 _dispatch_sync_slow + 70
+5   libdispatch.dylib             	0x031f794d dispatch_sync + 47
+6   sample-cdq                    	0x0024c714 -[RMREPL evaluateExpression:] + 212
+7   sample-cdq                    	0x0024cbb6 -[RMREPL start] + 230
+8   Foundation                    	0x01646597 -[NSThread main] + 76
+9   Foundation                    	0x016464f6 __NSThread__main__ + 1275
+10  libsystem_pthread.dylib       	0x035955fb _pthread_body + 144
+11  libsystem_pthread.dylib       	0x03595485 _pthread_start + 130
+12  libsystem_pthread.dylib       	0x0359acf2 thread_start + 34
+
+Thread 0 crashed with X86 Thread State (32-bit):
+  eax: 0x00000001  ebx: 0x00000001  ecx: 0x023572e5  edx: 0x01ea6b0c
+  edi: 0x01c7350e  esi: 0x08d35ec0  ebp: 0xbfffbcd8  esp: 0xbfffbc5c
+   ss: 0x00000023  efl: 0x00010202  eip: 0x003450b0   cs: 0x0000001b
+   ds: 0x00000023   es: 0x00000023   fs: 0x00000000   gs: 0x0000000f
+  cr2: 0x00000001
+  
+Logical CPU:     0
+Error Code:      0x00000004
+Trap Number:     14
+
+
+Binary Images:
+    0x1000 -   0x288ff3 +sample-cdq (0) <0707D9AD-3853-3BF3-BBCC-A0B92CF50E14> /Users/USER/Library/Developer/CoreSimulator/Devices/A1AC494C-7650-4668-9B3D-BB67D2F1AECA/data/Applications/7D8CC83D-03DB-4899-B162-E906D72EE9A0/sample-cdq.app/sample-cdq
+  0x330000 -   0x4d8e17 +libobjc.A.dylib (627) <273F5A4C-82CE-3129-B7E9-036663C5E799> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.A.dylib
+  0x4f3000 -   0x6b3ff7 +libicucore.A.dylib (511.23.1) <2781427E-8CA6-3846-9973-540D4C26622A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libicucore.A.dylib
+  0x746000 -  0x1117ffb +UIKit (2903.23) <7C470585-E282-3A9D-989B-E229FBCD9E8D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+ 0x15c4000 -  0x1883fff +Foundation (1047.22) <312BC99F-1C7C-3768-9CA6-AE9FAE9C431C> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+ 0x19e9000 -  0x1b9aff7  com.apple.CoreGraphics (1.600.0 - 580.2) <B6A2407E-F0CC-3E8B-A511-C9594B7C4F82> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+ 0x1bf6000 -  0x1e81ff7 +CoreData (479.2) <E8F01684-6753-3AED-91FF-38AEBAC62CB0> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreData.framework/CoreData
+ 0x1f58000 -  0x1f6bff7 +CoreVideo (117.0.1) <9F3229DA-C6CD-3F2B-9989-DABEA5FE4207> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+ 0x1f7b000 -  0x1f8affb +OpenGLES (9.2.1) <5C1D8A7A-60BF-3387-8BDD-1E70BC7902AC> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+ 0x1f95000 -  0x20c4ff3 +CoreImage (233) <0FB916FB-9F18-30AD-B35F-9C6A62E0C89B> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+ 0x2137000 -  0x2196ffb +Security (1562.12) <BD5D0B45-90B1-331F-AC4F-19335CE96E57> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Security.framework/Security
+ 0x21c8000 -  0x2383ffb +CoreFoundation (847.21) <3F06FEF7-1059-30DD-99A2-F41B561FF610> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+ 0x249f000 -  0x2749ffb +ImageIO (938) <B2B582BE-801E-365F-94A7-AB56B6849EF5> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/ImageIO.framework/ImageIO
+ 0x27ce000 -  0x295effb +QuartzCore (330.0.10) <B646B890-8A2A-33BE-9F51-34CB7A7C847D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+ 0x29fb000 -  0x2b05ff3 +CoreText (386.2) <5B31E2C0-8BCA-322F-81D5-ECEA0EF70391> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+ 0x2b6c000 -  0x2c05fff +MobileCoreServices (51) <54AC1821-C564-3E21-94EB-75B001F76F7D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+ 0x2c46000 -  0x2e0ffff +CFNetwork (672.0.8) <05E1CF0C-1943-3663-8306-A9D6FB86741D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+ 0x2ef4000 -  0x2ef4ffd +Accelerate (459) <F5518B25-DA97-382E-BC2B-F2437AF790DC> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Accelerate
+ 0x2ef8000 -  0x2f51ffb +SystemConfiguration (615) <7F27E5E0-6434-33C2-AA32-E987599A4E44> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+ 0x2f7a000 -  0x2fd7ff3 +CoreMedia (1329.37) <E817F0AA-01E2-378F-AEFE-A44F4AEEDECA> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreMedia.framework/CoreMedia
+ 0x3012000 -  0x306cffb +CoreAudio (90.1) <699F4713-D7B9-3EAE-84F5-DC6948ABE1AE> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+ 0x308e000 -  0x30f3ff7 +libc++.1.dylib (221) <84D56632-D384-38F9-A806-E44FC68599BD> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++.1.dylib
+ 0x3143000 -  0x3164fff +libSystem.dylib (111) <53001FC8-6A29-34FA-A5F8-EB08F9ECD00D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+ 0x317b000 -  0x319ffff +libc++abi.dylib (114) <A8B737BA-DD12-377F-9094-80E07767C75A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libc++abi.dylib
+ 0x31ab000 -  0x31b0ffb +libsystem_override.dylib (111) <B5704488-537B-3CD0-A5E7-E92464C40DC1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+ 0x31b6000 -  0x31bafff +libcache_sim.dylib (60) <EE48F41A-BC4F-3D63-A2D6-F5A84D351094> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+ 0x31bf000 -  0x31ccfff +libcommonCrypto_sim.dylib (60049) <16302F50-E2F9-3553-AC5E-016B6376BC38> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+ 0x31d8000 -  0x31ddff2 +libcompiler_rt_sim.dylib (57) <9A59BF38-41F0-3025-A4F4-5976DE938D98> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+ 0x31e6000 -  0x31eeffb +libcopyfile_sim.dylib (103) <DD134B67-AE4F-3283-AC44-DACBC1236B5D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+ 0x31f4000 -  0x3211ff7 +libdispatch.dylib (354.3.1) <9633856A-07B8-3168-9A1A-D7841EE6CDFC> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+ 0x3226000 -  0x3226fff +libdyld_sim.dylib (324) <56062006-0CF0-36E9-B3FA-9233A7EFF6B2> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+ 0x322a000 -  0x322eff7 +libmacho_sim.dylib (846.2.4) <B4613456-B44A-3B9A-B6BB-86C2B9C86AC1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+ 0x3233000 -  0x323cff7 +libnotify_sim.dylib (121) <60531101-CA00-3900-A89C-CD0611A26BEC> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+ 0x3243000 -  0x3245fff +libremovefile_sim.dylib (33) <06B996EA-69F8-35AE-B8C6-E310A0509C51> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+ 0x324a000 -  0x324bfff +libsystem_sim_blocks.dylib (64) <9EB9AD8C-D999-3DDB-8252-B7BF5ED80E48> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+ 0x324f000 -  0x32dbff7 +libsystem_sim_c.dylib (1002) <246932DC-DE39-3298-AC1A-D97F46B02894> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+ 0x32fe000 -  0x3306ff7 +libsystem_sim_dnssd.dylib (539.3.1) <65A4366C-13E2-30E6-8095-D22E3154AEBF> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+ 0x330c000 -  0x3333ff7 +libsystem_sim_info.dylib (452) <B12CA12A-2273-3CAD-8764-312DDDA97A1E> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+ 0x3343000 -  0x3371ffe +libsystem_sim_m.dylib (3057) <CBD35483-BC60-307E-9844-6DDDE27E5C54> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+ 0x3378000 -  0x33a4fff +libsystem_network.dylib (268) <EDADCE03-3B7C-38EA-BE3D-4E50242BD16F> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+ 0x33ba000 -  0x33c1ffb +libunwind_sim.dylib (59.3) <ADE2FFBE-57FA-3016-AE43-ABA27017AE6B> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+ 0x33c8000 -  0x33f3fff +libxpc.dylib (330.1.2) <3EF107E6-2644-3409-B21B-EC57A59D0C57> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+ 0x340b000 -  0x340dfff +libsystem_sim_configuration.dylib (615) <2D0C72D7-B019-3084-A248-F00307EBDF53> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+ 0x3413000 -  0x3427ff3 +libsystem_sim_asl.dylib (224) <B389C87C-4575-3100-8459-C8D76A426E7A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+ 0x3430000 -  0x3431fff  libSystem.B.dylib (1197.1.1) <789CF4BE-5A0B-310E-9515-E515EA033D03> /usr/lib/libSystem.B.dylib
+ 0x3438000 -  0x348aff7 +libcorecrypto_sim.dylib (161.4) <0F3768DE-26AD-3252-BC30-04127677F0FA> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcorecrypto_sim.dylib
+ 0x3499000 -  0x349cff7 +libdyld.dylib (239.4) <B2BD2222-2A51-39B7-BCC5-B8A4F36F900A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+ 0x34a3000 -  0x34a8ff3  libsystem_platform.dylib (24.90.1) <0613F163-9A7A-3908-B30B-AC1627503933> /usr/lib/system/libsystem_platform.dylib
+ 0x34b9000 -  0x34d1ff7  libsystem_malloc.dylib (23.10.1) <CB52555E-0F5B-31E3-A42A-FD4F930E2192> /usr/lib/system/libsystem_malloc.dylib
+ 0x34da000 -  0x356cff9  libsystem_c.dylib (997.90.3) <80D21D3D-1031-314C-B1F0-0B35B977CEFB> /usr/lib/system/libsystem_c.dylib
+ 0x3594000 -  0x359bffb  libsystem_pthread.dylib (53.1.4) <951ABDE1-7276-3ACC-BFCE-E3BDAC557202> /usr/lib/system/libsystem_pthread.dylib
+ 0x35a5000 -  0x35adfff  liblaunch.dylib (842.92.1) <C180016C-F2DB-3D8B-A72D-5185CE67DFA2> /usr/lib/system/liblaunch.dylib
+ 0x35b5000 -  0x35b6fff  libsystem_blocks.dylib (63) <2AC67D5E-ECD4-3644-A53C-9684F9B7AA33> /usr/lib/system/libsystem_blocks.dylib
+ 0x35bb000 -  0x35d8ff4  libsystem_kernel.dylib (2422.115.4) <011434BC-0EFD-35E9-B76D-A22B76DC83DC> /usr/lib/system/libsystem_kernel.dylib
+ 0x35f9000 -  0x35feff6  libcompiler_rt.dylib (35) <B97D25BB-B87B-3319-8915-C1C274661E87> /usr/lib/system/libcompiler_rt.dylib
+ 0x3609000 -  0x360fffb  libunwind.dylib (35.3) <099D1A6F-A1F0-3D05-BF1C-0A7BB32D39C2> /usr/lib/system/libunwind.dylib
+ 0x3616000 -  0x3647ffa  libsystem_m.dylib (3047.16) <1ABEB106-061B-3CDD-BF09-7A9A2302B79B> /usr/lib/system/libsystem_m.dylib
+ 0x3652000 -  0x3652fff  libkeymgr.dylib (28) <52854EAA-2BAB-37A1-9C6A-762C91E0E0CE> /usr/lib/system/libkeymgr.dylib
+ 0x3657000 -  0x365bff7  libmacho.dylib (845) <13CB2F83-D92E-31CE-AF7E-92C2776850CD> /usr/lib/system/libmacho.dylib
+ 0x3660000 -  0x3672fff  libsystem_asl.dylib (217.1.4) <EE97E801-21D9-32F9-B33D-F6AA4D4E2739> /usr/lib/system/libsystem_asl.dylib
+ 0x367c000 -  0x36a4fff  libsystem_info.dylib (449.1.3) <A488838A-39CF-3F6B-B1A1-9B0056E2310A> /usr/lib/system/libsystem_info.dylib
+ 0x36b8000 -  0x36c1ff7  libsystem_notify.dylib (121.20.1) <4D3293AC-1CEF-347A-987F-2314AF3CC6EA> /usr/lib/system/libsystem_notify.dylib
+ 0x36c9000 -  0x36cbfff  libquarantine.dylib (71) <50A89423-839C-31FE-BA55-0C2D04E0FFB4> /usr/lib/system/libquarantine.dylib
+ 0x36d1000 -  0x3721ff7  libcorecrypto.dylib (161.1) <135FD99E-2211-3DF4-825C-C9F816107F0C> /usr/lib/system/libcorecrypto.dylib
+ 0x3730000 -  0x3734ffa  libcache.dylib (62) <80341F7C-ECF1-3F65-9360-7E1B6A0FEDAC> /usr/lib/system/libcache.dylib
+ 0x3739000 -  0x3744ffb  libcommonCrypto.dylib (60049) <C5D2D9B6-56D9-37F4-A286-739CFBE54DCB> /usr/lib/system/libcommonCrypto.dylib
+ 0x3751000 -  0x3759fff  libcopyfile.dylib (103.92.1) <9B62DDFE-FEFD-31CA-989F-9BE0AB606C49> /usr/lib/system/libcopyfile.dylib
+ 0x3760000 -  0x3761fff  libremovefile.dylib (33) <56E5688C-9C10-3E95-9B0E-3B47110B3710> /usr/lib/system/libremovefile.dylib
+ 0x3767000 -  0x3769fff  libsystem_configuration.dylib (596.15) <E49AAD29-35C2-3EE2-AF4D-59514C4B478F> /usr/lib/system/libsystem_configuration.dylib
+ 0x376f000 -  0x3777fff  libsystem_dnssd.dylib (522.92.1) <7E36B79E-6BF4-3462-9A84-C0744D029636> /usr/lib/system/libsystem_dnssd.dylib
+ 0x377d000 -  0x377effa  libsystem_sandbox.dylib (278.11.1) <DA875837-A5C2-3004-8117-65F378E4BD03> /usr/lib/system/libsystem_sandbox.dylib
+ 0x3783000 -  0x3784ffd  libunc.dylib (28) <6EE1B741-707F-36E6-81CB-73CF3D8706E4> /usr/lib/system/libunc.dylib
+ 0x378a000 -  0x3884fff +UIFoundation (258.1) <9F40AC30-4EF9-38BE-8416-87168388EB45> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+ 0x38df000 -  0x395bffb +CoreUI (229) <156775EA-C68A-3F3F-8877-9CBD0A7E9665> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
+ 0x39c4000 -  0x3a36ffb +IOKit (920.3.4) <5D97C288-6763-32EB-B3DA-62EE3EE38DE0> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+ 0x3a66000 -  0x3d34ff3 +VideoToolbox (1329.37) <F3D7A7AF-CD31-382B-B427-2F5B0717E31A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/VideoToolbox.framework/VideoToolbox
+ 0x3da4000 -  0x3db3ff7 +MobileAsset (215.2) <841E44F3-269E-3FB6-9FC1-D9347C18243F> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
+ 0x3dbf000 -  0x3deaff3 +TelephonyUtilities (1) <CEC3995B-E849-3300-BCE7-2A8A9472EF9C> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+ 0x3e0f000 -  0x3e46ffb +BackBoardServices (2580.24) <B63DB720-E1CF-3C36-8191-0C198D8F3D5A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
+ 0x3e75000 -  0x3e7effb +XPCObjects (46) <51B7B34B-E5CD-3316-843E-E0E79C4276F8> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
+ 0x3e89000 -  0x3eaeffb +DictionaryServices (206) <AAD216DE-1E41-3713-BD41-B083127D5A6A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/DictionaryServices.framework/DictionaryServices
+ 0x3ec9000 -  0x3eddff7 +GraphicsServices (572.1) <6DAC1919-3391-37A7-8820-BF6E2954EE3C> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
+ 0x3ef0000 -  0x3f0dfff +SpringBoardServices (2580.24) <8FAAFCEB-FBBD-31C5-A45A-D3154CB43B10> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
+ 0x3f23000 -  0x3f77ff3 +AppSupport (893) <3D4A3207-D081-3B87-8F6C-9BE14E281286> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
+ 0x3fa9000 -  0x3fdbff3 +TextInput (1443.4) <A8853234-9628-37B7-A9BD-3D03B48F80A1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TextInput.framework/TextInput
+ 0x4006000 -  0x40dcffb +libsqlite3.dylib (158) <72791358-4EFE-3A80-A9EB-99F28A5CB071> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libsqlite3.dylib
+ 0x40f0000 -  0x41fdfff +WebKit (1385.0.3) <B959646C-C020-3729-BDCF-AE1ECB381681> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/WebKit.framework/WebKit
+ 0x42a8000 -  0x5805ffb +WebCore (1889.1.3) <EB0229F9-99F3-383F-8DFE-4976BAA493C1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/WebCore.framework/WebCore
+ 0x60a7000 -  0x6168ff7 +ProofReader (232) <01AE84E9-5194-3EDF-9EEF-2E172D1057E8> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
+ 0x6188000 -  0x6193ffb +libAccessibility.dylib (1210.0.1) <43CAC110-5188-33AB-8B58-B7C9866A4E46> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libAccessibility.dylib
+ 0x619f000 -  0x61eaff7 +PrintKit (141) <CA3C57C8-C3BE-3B45-B273-16392348840A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
+ 0x6208000 -  0x6221ff7 +libMobileGestalt.dylib (240.1) <707540BD-AFE9-373A-A96E-3D39230E9E82> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libMobileGestalt.dylib
+ 0x623b000 -  0x6278ff3 +PhysicsKit (4.6) <1FB8FDBB-E1AC-3134-A83B-ADD762792A04> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
+ 0x628e000 -  0x638efff +libxml2.2.dylib (25.6) <7DA59DED-A705-39A5-B2C1-120ADC066A52> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libxml2.2.dylib
+ 0x63bd000 -  0x63ccfff +libz.1.dylib (53) <ACA9D047-B210-3F62-A781-D638A09FBB9B> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libz.1.dylib
+ 0x63d1000 -  0x63f0ff7 +libCRFSuite.dylib (32) <8F59EBEF-29BB-3EBA-9D9F-B808A8CB6455> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libCRFSuite.dylib
+ 0x63fa000 -  0x63fbfff +liblangid.dylib (114) <07742CE2-3129-3F83-A031-590DF670F3E9> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/liblangid.dylib
+ 0x63ff000 -  0x6412fff +libbsm.0.dylib (28) <58269E2A-6B78-31B6-A15D-22540C7CF75C> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libbsm.0.dylib
+ 0x641a000 -  0x66c0fff +vImage (270) <28D71D46-CADC-3D78-9831-5E00315D39F7> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vImage.framework/vImage
+ 0x66fc000 -  0x66fcffd +vecLib (459) <1B1B60BF-2D27-36EE-9914-53FEA4410EF0> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/vecLib
+ 0x6700000 -  0x67d2fff +libvDSP.dylib (459) <512E3341-9EEE-30F6-9070-66052FCA9D52> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvDSP.dylib
+ 0x67de000 -  0x6841fff +libstdc++.6.dylib (100) <1187B81B-5D5B-399B-BEFA-0E1E73458EC5> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libstdc++.6.dylib
+ 0x68a1000 -  0x6c67ffa +libLAPACK.dylib (1104) <E3FC38DC-7457-38CB-8787-77E1DA71071B> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libLAPACK.dylib
+ 0x6c94000 -  0x6ddcff7 +libBLAS.dylib (1104) <64B032A7-860E-3D38-9713-B55D5B88F892> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libBLAS.dylib
+ 0x6df4000 -  0x6e7ffff +libvMisc.dylib (459) <0844A185-1211-36EA-9713-A35D74C4B54E> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accelerate.framework/Frameworks/vecLib.framework/libvMisc.dylib
+ 0x6e87000 -  0x6e90ffb +libGFXShared.dylib (9.2.1) <DCF12923-7BBA-3497-A9CB-66D3F2F4AAB7> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/libGFXShared.dylib
+ 0x6e97000 -  0x6edbfff +libGLImage.dylib (9.2.1) <19068D20-E058-39C7-A6B6-5AA80D4EA200> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/libGLImage.dylib
+ 0x6ee4000 -  0x6ee6fff +libCVMSPluginSupport.dylib (9.2.1) <710DB442-166D-38F4-9051-4952A870FE55> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/libCVMSPluginSupport.dylib
+ 0x6eeb000 -  0x6ef6ff3 +libCoreVMClient.dylib (65.3) <18119DE5-2197-389A-B0CD-B812F0495D40> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/libCoreVMClient.dylib
+ 0x6eff000 -  0x788dffa +libLLVMContainer.dylib (65.3) <605871D9-49BC-379F-A5CC-7AF50201F6A4> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/libLLVMContainer.dylib
+ 0x7b39000 -  0x7b71ff7 +Bom (189) <2A4C6091-F9A8-35EC-9617-B9999C50681E> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Bom.framework/Bom
+ 0x7b80000 -  0x7b8dfff +libbz2.1.0.dylib (31) <5A4BBB38-6EDB-384E-8EE5-533A33224F7D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libbz2.1.0.dylib
+ 0x7b92000 -  0x7fc4ff7 +FaceCore (3.0.1) <DF828225-116D-3722-816D-FA00F4F75E67> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/FaceCore.framework/FaceCore
+ 0x81d8000 -  0x81d9fff +SimulatorClient (463.9.4) <2C2FBE04-EDB5-3779-BBBF-EADFE3DDDEAD> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/SimulatorClient.framework/SimulatorClient
+ 0x81de000 -  0x81effff +AssetsLibraryServices (2012.3.18) <4898BAA2-EEF4-3350-9D38-4498B4882EFB> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
+ 0x81ff000 -  0x8203ff7 +TCC (87) <8A527003-2D4B-3DC6-B641-01842C57081A> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/TCC.framework/TCC
+ 0x8209000 -  0x8214ff3 +CommonUtilities (25) <AFA3D9D1-0178-3B19-9032-492FE55B20CD> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
+ 0x821d000 -  0x8221fff +CommunicationsFilter (37) <6B0D601A-06F8-394D-BAE2-90B5F25568A7> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
+ 0x8226000 -  0x82aafff +AddressBook (10898) <B9CA2F40-7214-3607-90F1-84399B2F5EB1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AddressBook.framework/AddressBook
+ 0x82ea000 -  0x83a1ff3 +CoreTelephony (1645) <18BB4137-AAEF-3F09-A4E0-74C3D28C91AA> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
+ 0x83f7000 -  0x8463ffb +IMFoundation (163) <8A836C72-ED3F-3F71-9BEB-32FC76B0E618> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+ 0x8494000 -  0x84c4ff3 +libtidy.A.dylib (15.11) <78F2B4D3-84A4-3A9A-9398-E9123150DA28> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libtidy.A.dylib
+ 0x84d1000 -  0x84fbff3 +Accounts (404.2.3) <47E3F917-3754-3DD2-B779-8038031E1B50> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Accounts.framework/Accounts
+ 0x8516000 -  0x851bfff +AggregateDictionary (200.1.1) <5D9C6962-DF7D-36D4-9A12-58960B7F9044> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/AggregateDictionary.framework/AggregateDictionary
+ 0x8523000 -  0x853effb +DataAccessExpress (1251.8.1) <4AC526E4-71EC-3C6F-9545-B7AADE903C89> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
+ 0x8556000 -  0x8559fff +OAuth (25) <CA9B12B6-43A5-3384-98A4-AA7D5533F797> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/OAuth.framework/OAuth
+ 0x855e000 -  0x8562fff +DataMigration (893) <6BD99FF2-D0C4-34C0-A4E5-F391BC5619AD> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
+ 0x8569000 -  0x857efff +libTelephonyUtilDynamic.dylib (517.1) <2BEFC4C6-3117-328B-BB69-0474019A9E0F> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libTelephonyUtilDynamic.dylib
+ 0x85a4000 -  0x85d0ffb +libxslt.1.dylib (13) <6CB8C77A-2D5F-3D97-9AF5-917D676EDBA8> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libxslt.1.dylib
+ 0x85dc000 -  0x89f8ff7 +JavaScriptCore (1218.0.1) <FF5FE48C-5EF9-35A3-9F49-199788BB46DC> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
+ 0x8ae1000 -  0x8ae8ff7 +MediaAccessibility (43) <46F4D481-1532-3D8E-944E-894E22FB0E28> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaAccessibility.framework/MediaAccessibility
+ 0x8af3000 -  0x8af9fff +CertUI (73) <20DBE65D-1D76-32A4-964D-EDBABDD02C5F> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/CertUI.framework/CertUI
+ 0x8b01000 -  0x8bf4ff7 +libiconv.2.dylib (41) <56B8956C-ECE9-37F8-AD35-F5040D1286BB> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libiconv.2.dylib
+ 0x8c02000 -  0x8c21ff7 +libresolv.9.dylib (54) <A0FB9BEF-5101-3D8E-8D88-9B75965EC500> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libresolv.9.dylib
+ 0x8cf0000 -  0x8cf4fff +BTLEAudioController (86.55) <A1D8E433-2A67-38D2-857D-DA31036817FE> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/BTLEAudioController.framework/BTLEAudioController
+ 0x9881000 -  0x98b1ff3 +libAVFAudio.dylib (42.2) <C3A0CD3D-B154-3406-B824-C83A5526A7FF> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
+ 0x9d00000 -  0x9e49ff7 +AVFoundation (696.31) <C22000CA-2503-307F-9697-65A5906E7EA1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AVFoundation.framework/AVFoundation
+ 0x9f2b000 -  0x9f5aff3 +Celestial (1329.37) <5DC681EC-96AB-3FA9-AE8C-043DF272C699> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Celestial.framework/Celestial
+ 0x9f8f000 -  0x9fb6ff3 +libRIP.A.dylib (580.2) <45C59B2D-A1C6-310E-A663-DDD295EE7AB1> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Resources/libRIP.A.dylib
+ 0x9fc3000 -  0x9fd1ff3 +libCMSBuiltin.A.dylib (580.2) <D36307AF-31F7-387C-B5EB-1D567E3BD38D> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Resources/libCMSBuiltin.A.dylib
+ 0xcec0000 -  0xd260ff7 +AudioToolbox (610.6.6) <F3D6F2F0-3E10-333A-8C46-E7384F71D805> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+ 0xd341000 -  0xd59eff3 +MediaToolbox (1329.37) <47AC0081-F2B7-3989-92B9-CC40F5694544> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
+ 0xd6d9000 -  0xd6eaff7 +Librarian (1224) <38B9D950-EC7C-3C09-8D75-20D04E2233D4> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Librarian.framework/Librarian
+ 0xe28c000 -  0xe2d8fff +libCGFreetype.A.dylib (580.2) <E35E0D2C-BC54-3919-B7C4-42ECD4E2143F> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/Resources/libCGFreetype.A.dylib
+ 0xe520000 -  0xe53ffff +Ubiquity (289.1) <40DD166F-C3E1-3AA6-877B-218BFF6B09FE> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/Ubiquity.framework/Ubiquity
+ 0xe54f000 -  0xe55ffff +GenerationalStorage (158) <4B8E3BF4-9BB0-324C-9F6C-4A2C473EA43F> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
+ 0xe568000 -  0xe595fff +ChunkingLibrary (155.1) <CB46313C-26D0-38DA-B850-ABD0E3D7945E> /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/ChunkingLibrary.framework/ChunkingLibrary
+ 0xe5c9000 -  0xf131f7b +librubymotion-repl.dylib (0) <930B93C9-7251-336D-BA7F-3FD06ADBCB28> /Library/RubyMotion/*/librubymotion-repl.dylib
+0x8fe38000 - 0x8fe6a417  dyld (239.4) <0F2176BD-4239-3506-BA41-3B885269520E> /usr/lib/dyld
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 54031
+    thread_create: 2
+    thread_set_state: 0
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=156.5M resident=137.7M(88%) swapped_out_or_unallocated=18.8M(12%)
+Writable regions: Total=55.7M written=4848K(9%) resident=10.4M(19%) swapped_out=0K(0%) unallocated=45.2M(81%)
+ 
+REGION TYPE                      VIRTUAL
+===========                      =======
+CG image                             12K
+CG raster data                       40K
+CoreData                              4K
+CoreUI image data                    20K
+Kernel Alloc Once                     4K
+MALLOC                             41.2M
+MALLOC (admin)                       48K
+SQLite page cache                   128K
+Stack                              64.6M
+VM_ALLOCATE                         952K
+__DATA                             8852K
+__LINKEDIT                         32.9M
+__OBJC                                4K
+__PAGEZERO                            4K
+__TEXT                            123.7M
+__UNICODE                           544K
+mapped file                       297.2M
+shared memory                         4K
+===========                      =======
+TOTAL                             569.9M
+
+ 
