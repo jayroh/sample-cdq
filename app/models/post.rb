@@ -1,9 +1,7 @@
 class Post < CDQManagedObject
-  def hi
-    puts 'hi'
-  end
-
   def activate
+    # commenting the following two lines will stop the crash
+
     self.active = 1
     cdq.save
   end

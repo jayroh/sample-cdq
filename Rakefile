@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-$:.unshift("/Library/RubyMotion2.32/lib")
+$:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 
 begin
