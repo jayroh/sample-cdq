@@ -5,7 +5,7 @@ Steps to reproduce
 1. Install Xcode 6.01
 2. Install the iOS 7 emulator in Xcode 6.01. ([Xcode -> Preferences -> Downloads](http://www.evernote.com/shard/s330/sh/df79bc3b-418f-447d-9716-4be82ab418c0/66f39c42084d0ae6303d4603a2bb856d/deep/0/Downloads.png))
 3. Pull down this code: `git clone git@github.com:jayroh/sample-cdq.git && cd sample-cdq && bundle`
-4. Run the app using a 7.x emulator: `rake target=7.1`
+4. Run the app using a 7.x emulator: `bundle exec rake target=7.1 device_name='iPhone 5s'`
 
 The app will start up in the iPhone 5S / iOS 7.1 emulator and give you the repl.
 
